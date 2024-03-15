@@ -2,9 +2,10 @@
 
 namespace App\Filament\Resources\ProductResource\Pages;
 
-use App\Filament\Resources\ProductResource;
 use Filament\Actions;
+use Filament\Facades\Filament;
 use Filament\Resources\Pages\CreateRecord;
+use App\Filament\Resources\ProductResource;
 
 class CreateProduct extends CreateRecord
 {
@@ -14,5 +15,13 @@ class CreateProduct extends CreateRecord
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
+    }
+
+    protected function mutateFormDataBeforeCreate(array $data): array
+    {
+
+        $data['user_id'] = Filament::auth()->user()->id;
+
+        return $data;
     }
 }

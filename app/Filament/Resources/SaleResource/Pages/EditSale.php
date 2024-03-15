@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\SaleResource\Pages;
 
 use Filament\Actions;
+use Filament\Facades\Filament;
 use App\Models\SuitCaseProduct;
 use App\Enums\SuitCaseStateEnum;
 use App\Filament\Resources\SaleResource;
@@ -33,6 +34,7 @@ class EditSale extends EditRecord
 
         $totaQuantity = $selectedProducts->reduce(fn ($subtotal, $item) => $subtotal + $item['quantity'], 0);
         $data['quantity'] = $totaQuantity;
+        $data['user_id'] = Filament::auth()->user()->id;
 
         return $data;
     }

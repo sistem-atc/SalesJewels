@@ -2,21 +2,21 @@
 
 namespace App\Models;
 
-use App\Models\Scopes\StockScope;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Scopes\UserRegisterScope;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Attributes\ScopedBy;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
+#[ScopedBy([UserRegisterScope::class])]
 class SuitCaseProduct extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
     protected $fillable = [
-        'quantity', 'quantitystock', 'unityvalue', 'product_id', 'suit_case_id'
+        'quantity', 'quantitystock', 'unityvalue', 'product_id', 'suit_case_id', 'user_id',
     ];
 
     public function suit_case(): BelongsTo

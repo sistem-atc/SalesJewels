@@ -16,14 +16,17 @@ class TypeProductSeeder extends Seeder
     {
         DB::table('type_products')->insert([
             'name' => 'Anel',
+            'user_id' => 1,
         ]);
 
         DB::table('type_products')->insert([
             'name' => 'Brinco',
+            'user_id' => 1,
         ]);
 
         DB::table('type_products')->insert([
             'name' => 'Corrente',
+            'user_id' => 1,
         ]);
     }
 }

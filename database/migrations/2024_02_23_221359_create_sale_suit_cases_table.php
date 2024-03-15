@@ -1,9 +1,10 @@
 <?php
 
+use App\Models\User;
 use App\Models\SuitCase;
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -14,11 +15,12 @@ return new class extends Migration
     {
         Schema::create('sale_suit_cases', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->foreignIdFor(SuitCase::class);
             $table->float('saletotalvalue');
             $table->float('profitvalue');
             $table->float('paymentvalue');
+            $table->foreignIdFor(User::class);
+            $table->timestamps();
             $table->softDeletes();
         });
     }

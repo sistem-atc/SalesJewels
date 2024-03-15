@@ -4,6 +4,7 @@ namespace App\Filament\Resources\CustomerResource\Pages;
 
 use Filament\Actions;
 use App\Helpers\CustomHelpers;
+use Filament\Facades\Filament;
 use Filament\Resources\Pages\EditRecord;
 use App\Filament\Resources\CustomerResource;
 
@@ -27,6 +28,7 @@ class EditCustomer extends EditRecord
 
     protected function mutateFormDataBeforeSave(array $data): array
     {
+        $data['user_id'] = Filament::auth()->user()->id;
         $data['cpf'] = CustomHelpers::sanitize($data['cpf']);
 
         return $data;

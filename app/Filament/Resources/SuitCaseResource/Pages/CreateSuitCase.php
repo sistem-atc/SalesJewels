@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\SuitCaseResource\Pages;
 
+use Filament\Facades\Filament;
 use Filament\Resources\Pages\CreateRecord;
 use App\Filament\Resources\SuitCaseResource;
 
@@ -14,6 +15,14 @@ class CreateSuitCase extends CreateRecord
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
+    }
+
+    protected function mutateFormDataBeforeCreate(array $data): array
+    {
+
+        $data['user_id'] = Filament::auth()->user()->id;
+
+        return $data;
     }
 
 }

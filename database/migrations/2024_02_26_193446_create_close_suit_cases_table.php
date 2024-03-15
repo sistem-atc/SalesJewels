@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use App\Models\SuitCase;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -18,6 +19,7 @@ return new class extends Migration
             $table->float('saletotalvalue');
             $table->float('balancepayable');
             $table->float('profit');
+            $table->foreignIdFor(User::class);
             $table->timestamps();
             $table->softDeletes();
         });

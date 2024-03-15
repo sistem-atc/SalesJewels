@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use App\Models\Product;
 use App\Models\SuitCase;
 use Illuminate\Support\Facades\Schema;
@@ -20,6 +21,7 @@ return new class extends Migration
             $table->integer('quantity');
             $table->integer('quantitystock')->nullable();
             $table->float('unityvalue');
+            $table->foreignIdFor(User::class);
             $table->timestamps();
             $table->softDeletes();
         });

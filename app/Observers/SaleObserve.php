@@ -48,7 +48,7 @@ class SaleObserve
 
         foreach ($saleProducts as $id)
         {
-            SuitCaseProduct::withoutGlobalScopes()
+            SuitCaseProduct::query()
                 ->where('product_id', $id['product_id'])
                 ->increment('quantitystock', (int) $id['quantity']);
         }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use App\Models\Stock;
 use App\Models\Customer;
 use App\Models\SuitCase;
@@ -20,7 +21,7 @@ return new class extends Migration
             $table->json('order');
             $table->integer('quantity');
             $table->float('total_value');
-            $table->string('paid')->nullable();
+            $table->foreignIdFor(User::class);
             $table->timestamps();
             $table->softDeletes();
         });

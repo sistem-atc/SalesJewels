@@ -16,15 +16,18 @@ class CustomerSeeder extends Seeder
     {
         DB::table('customers')->insert([
             'name' => 'Kaua',
+            'user_id' => 1,
         ]);
 
         DB::table('customers')->insert([
             'name' => 'Kleber',
-            'cpf' => '309.081.058-19'
+            'cpf' => '309.081.058-19',
+            'user_id' => 1,
         ]);
 
         DB::table('customers')->insert([
             'name' => 'Gustavo',
+            'user_id' => 1,
         ]);
     }
 }

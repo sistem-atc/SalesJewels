@@ -17,18 +17,21 @@ class ProfitRangeSeeder extends Seeder
             'rangeinitial' => 0,
             'rangefinal' => 2000.0,
             'percent' => 30.0,
+            'user_id' => 1,
         ]);
 
         DB::table('profit_ranges')->insert([
             'rangeinitial' => 2000.01,
             'rangefinal' => 3000.0,
             'percent' => 35.0,
+            'user_id' => 1,
         ]);
 
         DB::table('profit_ranges')->insert([
             'rangeinitial' => 3000.01,
             'rangefinal' => 50000.0,
             'percent' => 40.0,
+            'user_id' => 1,
         ]);
     }
 }

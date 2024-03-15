@@ -9,8 +9,6 @@ use Filament\Forms\Get;
 use Filament\Forms\Set;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
-use Illuminate\Support\Str;
-use App\Enums\PaymentSaleEnum;
 use App\Models\SuitCaseProduct;
 use App\Enums\SuitCaseStateEnum;
 use Filament\Resources\Resource;
@@ -58,10 +56,6 @@ class SaleResource extends Resource
                             ->label('Valor Total')
                             ->readOnly()
                             ->placeholder(fn ($get, $set) => self::updateTotalValue($set, $get)),
-                        TextInput::make('paid')
-                            ->label('Pagamento')
-                            ->readOnly()
-                            ->default(PaymentSaleEnum::PENDING),
                     ])->columns(3)->columnSpanFull(),
                 Section::make('Vendas')
                     ->schema([
@@ -119,10 +113,6 @@ class SaleResource extends Resource
                     ->label('Valor Total')
                     ->money('BRL')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('paid')
-                    ->label('Pago')
-                    ->badge()
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->label('Data da Venda')
                     ->searchable()
