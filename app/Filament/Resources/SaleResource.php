@@ -7,12 +7,17 @@ use Filament\Tables;
 use App\Models\Product;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
+use App\Models\SuitCase;
 use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Support\RawJs;
+use Filament\Facades\Filament;
 use App\Models\SuitCaseProduct;
 use App\Enums\SuitCaseStateEnum;
 use Filament\Resources\Resource;
 use Illuminate\Support\Facades\DB;
+use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Repeater;
@@ -22,7 +27,6 @@ use Illuminate\Database\Eloquent\Builder;
 use LaraZeus\Quantity\Components\Quantity;
 use App\Filament\Forms\Components\PtbrMoney;
 use App\Filament\Resources\SaleResource\Pages;
-use App\Models\SuitCase;
 
 class SaleResource extends Resource
 {
@@ -44,18 +48,38 @@ class SaleResource extends Resource
                             ->relationship('customer', 'name')
                             ->searchable()
                             ->createOptionForm([
-                                TextInput::make('name')
-                                    ->label('Nome')
-                                    ->required()
-                                    ->maxLength(255),
-                                TextInput::make('cpf')
-                                    ->label('CPF')
-                                    ->maxLength(255),
+                                Grid::make()
+                                    ->schema([
+                                        TextInput::make('name')
+                                            ->label('Nome')
+                                            ->required()
+                                            ->maxLength(50),
+                                    ])->columns(1),
+                                Grid::make()
+                                    ->schema([
+                                        TextInput::make('cpf')
+                                            ->label('CPF')
+                                            ->mask(RawJs::make(<<<'JS'
+                                                '999.999.999-99'
+                                            JS)),
+                                        TextInput::make('phone')
+                                            ->label('Telefone')
+                                            ->mask(RawJs::make(<<<'JS'
+                                                '(99) 99999-9999'
+                                                JS)),
+                                        Hidden::make('user_id')
+                                            ->default(Filament::auth()->user()->id)
+                                    ])->columns(2)
                             ]),
                         PtbrMoney::make('total_value')
                             ->label('Valor Total')
                             ->readOnly()
                             ->placeholder(fn ($get, $set) => self::updateTotalValue($set, $get)),
+                        Select::make('payment_form')
+                            ->label('Forma de Pagamento')
+                            ->preload()
+                            ->relationship('payment_form', 'name')
+                            ->searchable()
                     ])->columns(3)->columnSpanFull(),
                 Section::make('Vendas')
                     ->schema([
@@ -72,11 +96,11 @@ class SaleResource extends Resource
                                     ->afterStateUpdated(fn (Get $get, Set $set) => self::updateUnityValue($set, $get))
                                     ->disableOptionsWhenSelectedInSiblingRepeaterItems()
                                     ->searchable(),
-                                Quantity::make('quantity')
+                                TextInput::make('quantity')
                                     ->required()
                                     ->minValue(0)
                                     ->numeric()
-                                    ->maxValue(fn (Get $get, Set $set, $operation) => self::returnMaxQuantity($get, $set, $operation))
+                                    //->maxValue(fn (Get $get, Set $set, $operation) => self::returnMaxQuantity($get, $set, $operation))
                                     ->label('Quantidade')
                                     ->reactive()
                                     ->afterStateUpdated(fn (Get $get, Set $set) => self::updateUnityValue($set, $get)),
@@ -161,6 +185,7 @@ class SaleResource extends Resource
 
     public static function returnMaxQuantity(Get $get, Set $set, $operation): int
     {
+
         $quantity = SuitCaseProduct::where('product_id', $get('product'))->first();
 
         if($operation === 'create')

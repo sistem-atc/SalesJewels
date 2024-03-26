@@ -16,7 +16,7 @@ class SuitCaseProduct extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'quantity', 'quantitystock', 'unityvalue', 'product_id', 'suit_case_id', 'user_id',
+        'quantity', 'quantitystock', 'unityvalue', 'product_id', 'suit_case_id',
     ];
 
     public function suit_case(): BelongsTo

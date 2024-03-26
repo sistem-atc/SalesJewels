@@ -28,13 +28,18 @@ class CustomerResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->label('Nome')
                     ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('cpf')
-                    ->label('CPF')
+                    ->maxLength(50),
+                    Forms\Components\TextInput::make('phone')
+                    ->label('Telefone')
                     ->mask(RawJs::make(<<<'JS'
-                            '999.999.999-99'
-                        JS)),
-            ]);
+                            '(99) 99999-9999'
+                            JS)),
+                    Forms\Components\TextInput::make('cpf')
+                        ->label('CPF')
+                        ->mask(RawJs::make(<<<'JS'
+                                '999.999.999-99'
+                            JS)),
+            ])->columns(3);
     }
 
     public static function table(Table $table): Table

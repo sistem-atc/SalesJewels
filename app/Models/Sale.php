@@ -6,6 +6,7 @@ use App\Observers\SaleObserve;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Scopes\UserRegisterScope;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Attributes\ScopedBy;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -19,7 +20,7 @@ class Sale extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'customer_id', 'suit_case_id', 'order', 'quantity', 'total_value', 'user_id',
+        'customer_id', 'suit_case_id', 'order', 'quantity', 'total_value', 'user_id', 'payment_form_id',
     ];
 
     protected $casts = [
@@ -34,6 +35,16 @@ class Sale extends Model
     public function suit_case(): BelongsTo
     {
         return $this->belongsTo(SuitCase::class);
+    }
+
+    public function payment_form(): BelongsTo
+    {
+        return $this->belongsTo(PaymentForm::class);
+    }
+
+    public function bill(): HasMany
+    {
+        return $this->HasMany(Bill::class);
     }
 
 }

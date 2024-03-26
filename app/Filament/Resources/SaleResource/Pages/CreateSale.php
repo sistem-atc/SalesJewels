@@ -21,11 +21,13 @@ class CreateSale extends CreateRecord
 
     protected function mutateFormDataBeforeCreate(array $data): array
     {
+
         $selectedProducts = collect($data['order'])
             ->filter(fn ($item) => !empty($item['quantity']));
 
         $totaQuantity = $selectedProducts->reduce(fn ($subtotal, $item) => $subtotal + $item['quantity'], 0);
 
+        $data['payment_form_id'] =  $data['payment_form'];
         $data['suit_case_id'] = SuitCase::where('state', SuitCaseStateEnum::SALE)->first()->id;
         $data['customer_id'] = $data['customer'];
         $data['quantity'] = $totaQuantity;

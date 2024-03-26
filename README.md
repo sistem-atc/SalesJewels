@@ -1,9 +1,8 @@
 @TODO LIST
 		
     => Criar Formas para baixar os pagamentos
-    => Alterar a tela de vendas para tirar o estado do pagamento
-    => Criar tipos de pagamento para a tela de vendas
     => criar um observer para criar as faturas a partir da tela de vendas
+        Falta somente o update e delete
     => criar resource para visualizar as faturas de peças vendidas
 
 

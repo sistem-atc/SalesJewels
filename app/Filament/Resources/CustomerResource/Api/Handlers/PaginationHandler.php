@@ -1,11 +1,10 @@
 <?php
 namespace App\Filament\Resources\CustomerResource\Api\Handlers;
 
-use Illuminate\Http\Request;
-use Rupadana\ApiService\Http\Handlers;
 use Spatie\QueryBuilder\QueryBuilder;
+use Rupadana\ApiService\Http\Handlers;
 use App\Filament\Resources\CustomerResource;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Client\Request;
 
 class PaginationHandler extends Handlers {
     public static string | null $uri = '/';
@@ -17,7 +16,6 @@ class PaginationHandler extends Handlers {
     {
 
         $model = static::getEloquentQuery();
-
         $query = QueryBuilder::for($model)
         ->withoutGlobalScopes()
         ->allowedFields($model::$allowedFields ?? [])

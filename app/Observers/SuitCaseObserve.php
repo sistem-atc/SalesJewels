@@ -9,6 +9,7 @@ class SuitCaseObserve
 {
     public function deleted(SuitCase $suitCase): void
     {
+
         $dataStock = SuitCaseProduct::where('suit_case_id', $suitCase->id)->get()->toArray();
 
         foreach ($dataStock as $id)

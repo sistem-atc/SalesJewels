@@ -21,7 +21,6 @@ return new class extends Migration
             $table->integer('quantity');
             $table->integer('quantitystock')->nullable();
             $table->float('unityvalue');
-            $table->foreignIdFor(User::class);
             $table->timestamps();
             $table->softDeletes();
         });
