@@ -49,6 +49,9 @@ class CustomerResource extends Resource
                 Tables\Columns\TextColumn::make('name')
                     ->label('Nome')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('phone')
+                    ->label('Telefone')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('cpf')
                     ->label('CPF')
                     ->formatStateUsing(fn ($state) => preg_replace("/(\d{3})(\d{3})(\d{3})(\d{2})/", "\$1.\$2.\$3-\$4", $state))

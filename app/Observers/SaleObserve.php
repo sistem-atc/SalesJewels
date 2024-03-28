@@ -63,15 +63,18 @@ class SaleObserve
                 ->decrement('quantitystock', $id['quantity']);
         }
 
-        //Consultar as parcelas pelo numero do ID da venda
-        //Verificar como modificar os valores das parcelas com o novo valor do update
+        $condition = Str::of(PaymentForm::where('id', '=', $sale['payment_form_id'])->first()->condition)->explode(',');
+        $parcel_value = $sale['total_value'] / count($condition);
+
+        Bill::where('sale_id', '=', $sale['id'])
+            ->update([
+                'value' => $parcel_value,
+            ]);
 
     }
 
     public function deleted(Sale $sale): void
     {
-
-        dd($sale);
 
         $saleProducts = $sale->order;
 
@@ -82,8 +85,7 @@ class SaleObserve
                 ->increment('quantitystock', (int) $id['quantity']);
         }
 
-        //Consultar as parcelas pelo numero do ID da venda
-        //Excluir as parcelas relativas ao pedido
+        Bill::where('sale_id', '=', $sale['id'])->delete();
 
     }
 
