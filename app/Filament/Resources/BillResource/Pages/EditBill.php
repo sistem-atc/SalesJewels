@@ -2,8 +2,9 @@
 
 namespace App\Filament\Resources\BillResource\Pages;
 
-use App\Filament\Resources\BillResource;
 use Filament\Actions;
+use Filament\Facades\Filament;
+use App\Filament\Resources\BillResource;
 use Filament\Resources\Pages\EditRecord;
 
 class EditBill extends EditRecord
@@ -22,5 +23,12 @@ class EditBill extends EditRecord
     protected function getRedirectUrl(): string
     {
         return $this->getResource()::getUrl('index');
+    }
+
+    protected function mutateFormDataBeforeSave(array $data): array
+    {
+        $data['user_id'] = Filament::auth()->user()->id;
+
+        return $data;
     }
 }

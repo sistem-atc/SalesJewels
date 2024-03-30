@@ -28,14 +28,14 @@ class SaleObserve
 
         foreach ($condition as $parcel)
         {
-
             $current =  Carbon::today();
 
             Bill::create([
                 'sale_id' => $sale['id'],
                 'customer_id' => $sale['customer_id'],
+                'user_id' => $sale['user_id'],
                 'value' => $parcel_value,
-                'duo_date' => $current->addDays($parcel),
+                'duo_date' => $current->addDays((int) $parcel),
                 'state' => BillEnum::PENDING,
             ]);
         }

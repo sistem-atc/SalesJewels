@@ -9,6 +9,7 @@ use Filament\Resources\Pages\ListRecords;
 class ListBills extends ListRecords
 {
     protected static string $resource = BillResource::class;
+    protected ?string $heading = 'Faturas';
 
     protected function getHeaderActions(): array
     {

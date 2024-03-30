@@ -1,10 +1,11 @@
 <?php
 
-use App\Models\Customer;
 use App\Models\Sale;
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
+use App\Models\User;
+use App\Models\Customer;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
 {
@@ -15,11 +16,13 @@ return new class extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Sale::class);
-            $table->foreignIdFor(Customer::class);
+            $table->foreignIdFor(Sale::class)->constrained();
+            $table->foreignIdFor(Customer::class)->constrained();
+            $table->foreignIdFor(User::class)->constrained();
             $table->float('value');
             $table->date('duo_date');
             $table->string('state');
+            $table->date('payment_date')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

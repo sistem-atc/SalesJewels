@@ -2,21 +2,21 @@
 
 namespace App\Filament\Resources\SuitCaseResource\Pages;
 
-use App\Enums\SuitCaseStateEnum;
-use App\Filament\Forms\Components\PtbrMoney;
-use App\Models\CloseSuitCase;
-use App\Models\ProfitRange;
 use App\Models\Stock;
 use App\Models\SuitCase;
+use App\Models\ProfitRange;
+use App\Models\CloseSuitCase;
+use Filament\Facades\Filament;
 use App\Models\SuitCaseProduct;
+use App\Enums\SuitCaseStateEnum;
 use Filament\Notifications\Notification;
+use App\Filament\Forms\Components\PtbrMoney;
 
 class SuportFunctions
 {
 
     public static function BaixarMaleta($data): Notification
     {
-
         $status = SuitCase::where('id', $data)->select('state', 'number')->first();
 
         if ($status->state === SuitCaseStateEnum::PAID){
@@ -64,6 +64,7 @@ class SuportFunctions
             'saletotalvalue' => $sales,
             'balancepayable' => $sales - $profit,
             'profit' => $profit,
+            'user_id' => Filament::auth()->user()->id,
         ]);
 
         return Notification::make()

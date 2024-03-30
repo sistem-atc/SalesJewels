@@ -20,7 +20,6 @@ use Filament\Tables\Filters\SelectFilter;
 use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Forms\Components\PtbrMoney;
 use App\Filament\Resources\SuitCaseResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class SuitCaseResource extends Resource
 {

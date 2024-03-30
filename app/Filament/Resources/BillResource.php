@@ -27,19 +27,28 @@ class BillResource extends Resource
         return $form
             ->schema([
                 Select::make('sale_id')
+                    ->label('Numero da Venda')
                     ->relationship('sale', 'id')
                     ->required()
                     ->disabled(),
                 Select::make('customer_id')
+                    ->label('Nome do Cliente')
                     ->relationship('customer', 'name')
                     ->required()
                     ->disabled(),
                 PtbrMoney::make('value')
+                    ->label('Valor')
                     ->required()
                     ->disabled(),
                 DatePicker::make('duo_date')
+                    ->label('Data de Vencimento')
+                    ->required()
+                    ->disabled(),
+                DatePicker::make('payment_date')
+                    ->label('Data do Pagamento')
                     ->required(),
                 Select::make('state')
+                    ->label('Estado')
                     ->required()
                     ->options(BillEnum::class),
             ]);
@@ -61,6 +70,9 @@ class BillResource extends Resource
                 Tables\Columns\TextColumn::make('duo_date')
                     ->date('d/m/Y')
                     ->sortable(),
+                Tables\Columns\TextColumn::make('payment_date')
+                    ->date('d/m/Y')
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('state')
                     ->searchable(),
             ])
@@ -68,7 +80,8 @@ class BillResource extends Resource
                 //Tables\Filters\TrashedFilter::make(),
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->hidden(fn($record) => $record->state == BillEnum::PAID),
                 Tables\Actions\ViewAction::make(),
                 //Tables\Actions\DeleteAction::make(),
             ])

@@ -1,10 +1,8 @@
 @TODO LIST
 		
-    => Criar Formas para baixar os pagamentos
-    => criar um observer para criar as faturas a partir da tela de vendas
-        Falta somente o update e delete
-    => criar resource para visualizar as faturas de peças vendidas
-
+    => Criando os card do Dashbord
+    => Confgurar cliente de e-mail
+    => Criar redefinição de senha
 
 Comands
 

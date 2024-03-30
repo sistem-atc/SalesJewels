@@ -26,7 +26,10 @@ class ShieldCommand extends Command
      */
     public function handle()
     {
+
         Artisan::call('shield:generate --all');
+
         Artisan::call('shield:super-admin --user=1');
+
     }
 }
