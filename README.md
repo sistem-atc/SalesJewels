@@ -1,7 +1,6 @@
 @TODO LIST
 		
     => Criando os card do Dashbord
-    => Confgurar cliente de e-mail
     => Criar redefinição de senha
 
 Comands
