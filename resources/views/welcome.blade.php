@@ -37,7 +37,7 @@
          <header class="header_section">
             <div class="container">
                <nav class="navbar navbar-expand-lg custom_nav-container ">
-                  <a class="navbar-brand" href="index.html"><img width="250" src="images/logo.png" alt="#" /></a>
+                  <a class="navbar-brand" href="/"><img width="250" src="{{ Storage::url('images/logo.png') }}" alt="#" /></a>
                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class=""> </span>
                   </button>
@@ -62,6 +62,9 @@
                         <li class="nav-item">
                            <a class="nav-link" href="contact.html">Contact</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/psj/login">Área Restrita</a>
+                         </li>
                         <li class="nav-item">
                            <a class="nav-link" href="#">
                               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
@@ -355,7 +358,7 @@
          <div class="container">
             <div class="box">
                <div class="arrival_bg_box">
-                  <img src="images/arrival-bg.png" alt="">
+                  <img src="{{ Storage::url('images/arrival-bg.png') }}" alt="">
                </div>
                <div class="row">
                   <div class="col-md-6 ml-auto">
@@ -399,7 +402,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p1.png" alt="">
+                        <img src="{{ Storage::url('images/p1.png') }}" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -424,7 +427,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p2.png" alt="">
+                        <img src="{{ Storage::url('images/p2.png') }}" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -449,7 +452,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p3.png" alt="">
+                        <img src="{{ Storage::url('images/p3.png') }}" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -474,7 +477,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p4.png" alt="">
+                        <img src="{{ Storage::url('images/p4.png') }}" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -499,7 +502,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p5.png" alt="">
+                        <img src="{{ Storage::url('images/p5.png') }}" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -524,7 +527,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p6.png" alt="">
+                        <img src="{{ Storage::url('images/p6.png') }}" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -549,7 +552,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p7.png" alt="">
+                        <img src="{{ Storage::url('images/p7.png') }}" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -574,7 +577,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p8.png" alt="">
+                        <img src="{{ Storage::url('images/p8.png') }}" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>
@@ -599,7 +602,7 @@
                         </div>
                      </div>
                      <div class="img-box">
-                        <img src="images/p9.png" alt="">
+                        <img src="{{ Storage::url('images/p9.png') }}" alt="">
                      </div>
                      <div class="detail-box">
                         <h5>

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('ean');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->foreignIdFor(TypeProduct::class);
             $table->foreignIdFor(User::class);
             $table->timestamps();

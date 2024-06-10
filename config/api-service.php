@@ -2,16 +2,11 @@
 
 return [
     'navigation' => [
-        /**
-         * @deprecated 3.2
-         */
-        'group' => [
-            'token' => 'User',
-        ],
         'token' => [
+            'cluster' => null,
             'group' => 'Administração',
             'sort' => -1,
-            'icon' => 'heroicon-o-key',
+            'icon' => 'heroicon-o-key'
         ],
     ],
     'models' => [
@@ -21,6 +16,7 @@ return [
     ],
     'route' => [
         'panel_prefix' => true,
+        'use_resource_middlewares' => false,
     ],
     'tenancy' => [
         'enabled' => false,
