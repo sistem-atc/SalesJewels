@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <g id="surface1">
         <path style=" stroke:none;fill-rule:nonzero;fill:rgb(96.862745%,92.54902%,91.764706%);fill-opacity:1;" d="M 0.335938 0 C 94.496094 0 188.65625 0 285.664062 0 C 285.664062 16.5 285.664062 33 285.664062 50 C 191.503906 50 97.34375 50 0.335938 50 C 0.335938 33.5 0.335938 17 0.335938 0 Z M 0.335938 0 "/>
