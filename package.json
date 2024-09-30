@@ -17,6 +17,6 @@
         "vite": "^5.4.7"
     },
     "dependencies": {
-        "vite-plugin-css-injected-by-js": "^3.5.1"
+        "vite-plugin-css-injected-by-js": "^3.5.2"
     }
 }
