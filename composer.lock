@@ -545,16 +545,16 @@
         },
         {
             "name": "dedoc/scramble",
-            "version": "v0.12.10",
+            "version": "v0.12.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dedoc/scramble.git",
-                "reference": "996dc8db3e09e7f893d4883dfdfa8f2839fee531"
+                "reference": "a107fd82242abd765a9a22652bfa13f65e77e209"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dedoc/scramble/zipball/996dc8db3e09e7f893d4883dfdfa8f2839fee531",
-                "reference": "996dc8db3e09e7f893d4883dfdfa8f2839fee531",
+                "url": "https://api.github.com/repos/dedoc/scramble/zipball/a107fd82242abd765a9a22652bfa13f65e77e209",
+                "reference": "a107fd82242abd765a9a22652bfa13f65e77e209",
                 "shasum": ""
             },
             "require": {
@@ -609,7 +609,7 @@
             ],
             "support": {
                 "issues": "https://github.com/dedoc/scramble/issues",
-                "source": "https://github.com/dedoc/scramble/tree/v0.12.10"
+                "source": "https://github.com/dedoc/scramble/tree/v0.12.18"
             },
             "funding": [
                 {
@@ -617,7 +617,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-24T20:12:29+00:00"
+            "time": "2025-04-14T14:01:50+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -5048,16 +5048,16 @@
         },
         {
             "name": "rupadana/filament-api-service",
-            "version": "3.4.4",
+            "version": "3.4.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rupadana/filament-api-service.git",
-                "reference": "ed75b8db2a5f4600618f6b3047903606c9b1ea8d"
+                "reference": "e3e5532be402cfb6bbf44786d29c7aea2490595c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rupadana/filament-api-service/zipball/ed75b8db2a5f4600618f6b3047903606c9b1ea8d",
-                "reference": "ed75b8db2a5f4600618f6b3047903606c9b1ea8d",
+                "url": "https://api.github.com/repos/rupadana/filament-api-service/zipball/e3e5532be402cfb6bbf44786d29c7aea2490595c",
+                "reference": "e3e5532be402cfb6bbf44786d29c7aea2490595c",
                 "shasum": ""
             },
             "require": {
@@ -5128,7 +5128,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-03-03T01:29:13+00:00"
+            "time": "2025-03-21T00:50:24+00:00"
         },
         {
             "name": "ryangjchandler/blade-capture-directive",
@@ -5389,16 +5389,16 @@
         },
         {
             "name": "spatie/laravel-permission",
-            "version": "6.16.0",
+            "version": "6.17.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-permission.git",
-                "reference": "4fa03c06509e037a4d42c131d0f181e3e4bbd483"
+                "reference": "02ada8f638b643713fa2fb543384738e27346ddb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/4fa03c06509e037a4d42c131d0f181e3e4bbd483",
-                "reference": "4fa03c06509e037a4d42c131d0f181e3e4bbd483",
+                "url": "https://api.github.com/repos/spatie/laravel-permission/zipball/02ada8f638b643713fa2fb543384738e27346ddb",
+                "reference": "02ada8f638b643713fa2fb543384738e27346ddb",
                 "shasum": ""
             },
             "require": {
@@ -5460,7 +5460,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/laravel-permission/issues",
-                "source": "https://github.com/spatie/laravel-permission/tree/6.16.0"
+                "source": "https://github.com/spatie/laravel-permission/tree/6.17.0"
             },
             "funding": [
                 {
@@ -5468,20 +5468,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-02-28T20:29:57+00:00"
+            "time": "2025-04-08T15:06:14+00:00"
         },
         {
             "name": "spatie/laravel-query-builder",
-            "version": "6.3.1",
+            "version": "6.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-query-builder.git",
-                "reference": "465d9b7364590c9ae3ee3738ff8a293e685dd588"
+                "reference": "3675f7bace346dc5243f58fa7c531e36471200f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-query-builder/zipball/465d9b7364590c9ae3ee3738ff8a293e685dd588",
-                "reference": "465d9b7364590c9ae3ee3738ff8a293e685dd588",
+                "url": "https://api.github.com/repos/spatie/laravel-query-builder/zipball/3675f7bace346dc5243f58fa7c531e36471200f4",
+                "reference": "3675f7bace346dc5243f58fa7c531e36471200f4",
                 "shasum": ""
             },
             "require": {
@@ -5541,7 +5541,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2025-02-19T07:14:53+00:00"
+            "time": "2025-04-16T07:30:03+00:00"
         },
         {
             "name": "symfony/clock",
